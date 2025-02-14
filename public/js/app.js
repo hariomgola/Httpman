@@ -1,39 +1,28 @@
-// Wait for the document to be ready
-document.addEventListener("DOMContentLoaded", function () {
-  const sendButton = document.getElementById("sendButton");
-  const jsonInput = document.getElementById("jsonInput");
+const bindInputsHBS = () => {
+  document.addEventListener("DOMContentLoaded", function () {
+    const sendButton = document.getElementById("sendButton");
+    const methodSelect = document.getElementById("methodSelect");
+    const jsonInput = document.getElementById("jsonInput");
+    const responseDisplay = document.getElementById("responseDisplay");
+    const urlInput = document.getElementById("urlInput");
 
-  sendButton.addEventListener("click", function () {
-    const jsonData = jsonInput.value;
-    console.log("><><><><><><><><><><>")
+    // When the Send button is clicked
+    sendButton.addEventListener("click", function () {
+      const selectedMethod = methodSelect.value;
+      const jsonBody = jsonInput.value;
+      const url = urlInput.value;
 
-    try {
-      // Attempt to parse the JSON
-      const parsedData = JSON.parse(jsonData);
-
-      // Send the parsed data to the server
-      sendJsonToServer(parsedData);
-    } catch (e) {
-      alert("Invalid JSON format. Please check your input.");
-    }
+      const inputFromUser = {
+        httpMethord: selectedMethod,
+        url: url,
+        json: jsonBody,
+      };
+      console.log("|> Input from user\n", inputFromUser);
+      responseDisplay.value = JSON.stringify(inputFromUser, null, 2);
+    });
   });
+};
 
-//   // Function to send the JSON data to the server (via Fetch API)
-//   function sendJsonToServer(data) {
-//     fetch("/process-json", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     })
-//       .then((response) => response.json())
-//       .then((responseData) => {
-//         console.log("Server response:", responseData);
-//         // You can handle the server response here
-//       })
-//       .catch((error) => {
-//         console.error("Error:", error);
-//       });
-//   }
-});
+(function () {
+  bindInputsHBS();
+})();
