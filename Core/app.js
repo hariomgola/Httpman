@@ -4,6 +4,7 @@ const path = require("path");
 const hbs = require("hbs");
 const configData = require("./config.json");
 const httpRouter = require("./http");
+const open = require("open");
 
 const app = express();
 const port = process.env.PORT || configData.port;
@@ -42,6 +43,7 @@ const startServer = () => {
       )
     );
   });
+  open(`http://localhost:${port}`, { app: "chrome" });
 };
 
 // starting main server here
