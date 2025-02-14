@@ -1,3 +1,4 @@
-console.clear();
-console.log("***********************************************");
-require('./Core/app')
+#!/usr/bin/env node
+
+"use strict";
+require("./Core/app");
