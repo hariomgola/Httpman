@@ -19,8 +19,22 @@ const bindInputsHBS = () => {
       };
       console.log("|> Input from user\n", inputFromUser);
       responseDisplay.value = JSON.stringify(inputFromUser, null, 2);
+      windowOpeningMechnism(inputFromUser);
     });
   });
+};
+
+const windowOpeningMechnism = (data) => {
+  const newWindow = window.open("", "_blank");
+  newWindow.document.body.innerHTML = `
+  <html>
+      <head><title>JSON Data</title></head>
+      <body>
+          <h1>JSON Data</h1>
+          <pre>${SON.stringify(data, null, 2)}</pre>
+      </body>
+  </html>
+`;
 };
 
 (function () {
