@@ -1,17 +1,17 @@
 {
   "name": "httpman",
   "version": "1.0.1",
-  "description": "I am restman created by hariom kumar. All Right reserved.",
-  "homepage": "https://github.com/hariomgola/Restman#readme",
+  "description": "I am Httpman created by hariom kumar. All Right reserved.",
+  "homepage": "https://github.com/hariomgola/Httpman#readme",
   "bin": {
-    "restman": "./app.js"
+    "Httpman": "./app.js"
   },
   "bugs": {
-    "url": "https://github.com/hariomgola/Restman/issues"
+    "url": "https://github.com/hariomgola/Httpman/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hariomgola/Restman.git"
+    "url": "git+https://github.com/hariomgola/Httpman.git"
   },
   "license": "ISC",
   "author": "hariom.kumar",

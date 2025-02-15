@@ -26,7 +26,7 @@ const expressStaticCall = () => {
 
 const callingDynamicHBS = () => {
   app.get("", (req, res) => {
-    console.log(chalk.yellow(` |> Calling landing page of restman`));
+    console.log(chalk.yellow(` |> Calling landing page of Http Man`));
     res.render("index", {
       methordAllowed: configData.methordAllowed,
       copyright,
