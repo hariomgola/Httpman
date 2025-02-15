@@ -1,6 +1,6 @@
 {
-  "name": "restman",
-  "version": "1.0.0",
+  "name": "httpman",
+  "version": "1.0.1",
   "description": "I am restman created by hariom kumar. All Right reserved.",
   "homepage": "https://github.com/hariomgola/Restman#readme",
   "bin": {
