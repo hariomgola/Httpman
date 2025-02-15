@@ -5,11 +5,13 @@ const hbs = require("hbs");
 const configData = require("./config.json");
 const httpRouter = require("./http");
 const open = require("open");
+const cors = require("cors");
 
 const app = express();
 const port = process.env.PORT || configData.port;
 app.use(express.json());
 app.use(httpRouter);
+app.use(cors());
 
 const copyright = configData.copyright;
 const publicDirectoryPath = path.join(__dirname, "../public");
